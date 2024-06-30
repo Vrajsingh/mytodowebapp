@@ -1,11 +1,11 @@
 package com.learn.springboot.mytodowebapp;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 // "say hello" => "Hello, What are you learning today ?"                   
 
-@RestController
+@Controller
 public class SayHelloController {
     
     @RequestMapping("say-hello")
@@ -27,5 +27,16 @@ public class SayHelloController {
         sb.append("</html>");
 
         return sb.toString();
+    }
+
+    // "say-hello-jsp" => sayHello.jsp
+    // jsp will be created in path :  /src/main/resources/META-INF/resources/WEB-INF/jsp/sayHello.jsp
+    // if multiple jsp then
+    // jsp will be created in path :  /src/main/resources/META-INF/resources/WEB-INF/jsp/welcome.jsp
+    // jsp will be created in path :  /src/main/resources/META-INF/resources/WEB-INF/jsp/login.jsp
+    // jsp will be created in path :  /src/main/resources/META-INF/resources/WEB-INF/jsp/todo.jsp
+    @RequestMapping("say-hello-jsp")
+    public String sayHelloJsp() {
+        return "sayHello"; // returning name of the jsp
     }
 }
