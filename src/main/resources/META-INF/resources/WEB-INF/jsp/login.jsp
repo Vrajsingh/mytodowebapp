@@ -5,6 +5,8 @@
     <body>
         Welcome to login page !!
 
+        <pre>${errorMessage}</pre>
+
         <!-- Note : By default method type is GET. To make sure the value of name and
              password is no coming in the link (not secure) we use post method for storing
              cred as payload  -->
