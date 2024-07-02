@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 
 @Controller
-@SessionAttributes("names")
+@SessionAttributes("name")
 public class TodoController {
 
     public TodoController(TodoService todoService) {

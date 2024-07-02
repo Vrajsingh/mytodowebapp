@@ -14,9 +14,9 @@ public class TodoService {
     static {
         todos.add(new Todo(1, "learnSpringBoot", "Learn AWS",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(1, "learnSpringBoot", "Learn DevOps",
+        todos.add(new Todo(2, "learnSpringBoot", "Learn DevOps",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(1, "learnSpringBoot", "Learn Full Stack Development",
+        todos.add(new Todo(3, "learnSpringBoot", "Learn Full Stack Development",
                 LocalDate.now().plusYears(1), false));
     }
 

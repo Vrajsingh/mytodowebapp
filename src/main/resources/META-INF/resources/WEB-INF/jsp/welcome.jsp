@@ -3,8 +3,8 @@
         <title>"Welcome Page"</title>
     </head>
     <body>
-       <div>Welcome to my TODO Web App</div> 
-       <div>Name: ${name}</div>
+       <div>Welcome ${name}</div> 
+       <hr>
        <div><a href="list-todos">Manage</a> your todos</div>
     </body>
 </html>
