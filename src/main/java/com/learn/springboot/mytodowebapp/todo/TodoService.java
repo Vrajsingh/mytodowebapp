@@ -11,16 +11,24 @@ public class TodoService {
     
     private static List<Todo> todos = new ArrayList<>();
 
+    private static int todosCount = 0;
+
+    //This is static so whenever server restarts all the additional todos will be vanished
     static {
-        todos.add(new Todo(1, "learnSpringBoot", "Learn AWS",
+        todos.add(new Todo(todosCount++, "learnSpringBoot", "Learn AWS",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(2, "learnSpringBoot", "Learn DevOps",
+        todos.add(new Todo(todosCount++, "learnSpringBoot", "Learn DevOps",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(3, "learnSpringBoot", "Learn Full Stack Development",
+        todos.add(new Todo(todosCount++, "learnSpringBoot", "Learn Full Stack Development",
                 LocalDate.now().plusYears(1), false));
     }
 
     public List<Todo> findByUsername(String username) {
         return todos;
+    }
+
+    public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
+        Todo todo = new Todo(++todosCount,username, description, targetDate, done );
+        todos.add(todo);
     }
 }
