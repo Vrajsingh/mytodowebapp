@@ -15,11 +15,11 @@ public class TodoService {
 
     //This is static so whenever server restarts all the additional todos will be vanished
     static {
-        todos.add(new Todo(todosCount++, "learnSpringBoot", "Learn AWS",
+        todos.add(new Todo(++todosCount, "learnSpringBoot", "Learn AWS",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(todosCount++, "learnSpringBoot", "Learn DevOps",
+        todos.add(new Todo(++todosCount, "learnSpringBoot", "Learn DevOps",
                 LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(todosCount++, "learnSpringBoot", "Learn Full Stack Development",
+        todos.add(new Todo(++todosCount, "learnSpringBoot", "Learn Full Stack Development",
                 LocalDate.now().plusYears(1), false));
     }
 
