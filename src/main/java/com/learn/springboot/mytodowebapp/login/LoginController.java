@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("name")
 public class LoginController {
 
-    // @Autowired
     private AuthenticationService authenticationService;
 
     public LoginController(AuthenticationService authenticationService) {
@@ -25,7 +24,6 @@ public class LoginController {
         return "login";
     }
 
-    // Now for auth use model
     @RequestMapping(value="login", method=RequestMethod.POST)
     public String goToWelcomePage( @RequestParam String name, @RequestParam String password, 
                         ModelMap model ) {
@@ -33,11 +31,6 @@ public class LoginController {
         if(authenticationService.authenticate(name, password)) {
         
             model.put("name", name);
-    
-            // Authentication
-            // username : learnSpringBoot
-            // password : dummy
-    
             return "welcome";
         }
 

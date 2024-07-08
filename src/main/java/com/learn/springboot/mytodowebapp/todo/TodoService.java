@@ -36,9 +36,6 @@ public class TodoService {
     }
 
     public void deleteById(int id){
-        // todo.getId == id
-        // simplest way to define predicate is by using lamda function
-        // todo -> todo.getId() == id 
 
         Predicate<? super Todo> predicate = todo -> todo.getId() == id ;
         todos.removeIf(predicate);

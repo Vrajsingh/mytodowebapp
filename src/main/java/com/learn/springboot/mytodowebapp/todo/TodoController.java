@@ -32,13 +32,6 @@ public class TodoController {
         return "listTodos";
     }
 
-    // handles GET, POST, ...
-    // @RequestMapping("add-todo")
-    // public String showNewTodoPage() {
-    //     return "todo";
-    // }
-
-    // for handling GET
     @RequestMapping(value="add-todo", method = RequestMethod.GET)
     public String showNewTodoPage(ModelMap model) {
         String username = (String)model.get("name");
@@ -47,7 +40,6 @@ public class TodoController {
         return "todo";
     }
 
-    // for handling POST
     @RequestMapping(value="add-todo", method = RequestMethod.POST)
     public String addNewTodo(ModelMap model, @Valid Todo todo, BindingResult result) { // make sure "todo" matches jsp model attribute
         

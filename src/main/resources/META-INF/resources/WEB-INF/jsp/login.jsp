@@ -8,10 +8,6 @@
     
             <pre>${errorMessage}</pre>
     
-            <!-- Note : By default method type is GET. To make sure the value of name and
-                 password is no coming in the link (not secure) we use post method for storing
-                 cred as payload  -->
-    
             <form method="post">
                 Name: <input type="text" name="name">
                 Password: <input type="password" name="password">
