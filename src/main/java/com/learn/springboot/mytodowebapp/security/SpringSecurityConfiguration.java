@@ -12,25 +12,25 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class SpringSecurityConfiguration {
-    // to store username and password we basically use
-    // LDAP or Database
-    // Here we will use to keeo things simple : In Memory
-
-    // InMemoryUserDetailsManager
-    // InMemoryUserDetailsManager(UserDetails... users)
 
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
+        UserDetails userDetails1 = createNewUser("learnSpringBoot", "dummy");
+        UserDetails userDetails2 = createNewUser("learnSpringBoot2", "dummy");
+
+        return new InMemoryUserDetailsManager(userDetails1, userDetails2);
+    }
+
+    private UserDetails createNewUser(String username, String password) {
         Function<String, String> passwordEncoder
                         = input -> passwordEncoder().encode(input) ;
         UserDetails userDetails = User.builder()
                                     .passwordEncoder(passwordEncoder)
-                                    .username("learnSpringBoot")
-                                    .password("dummy")
+                                    .username(username)
+                                    .password(password)
                                     .roles("USER", "ADMIN")
                                     .build();
-
-        return new InMemoryUserDetailsManager(userDetails);
+        return userDetails;
     }
 
     @Bean
