@@ -2,14 +2,30 @@ package com.learn.springboot.mytodowebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
+//JPA
+// Bean -> Database
+
+// Note : H2 is in-memory database so once app is restarted all the data will be deleted
+
+@Entity
 public class Todo {
 
+    @Id
+    @GeneratedValue
+
     private int id;
+
+    // @Column(name="custom-name")
     private String username;
+
     @Size(min=10, message="Enter atleast 10 characters")
     private String description;
+
     private LocalDate targetDate;
     private boolean done;
     
